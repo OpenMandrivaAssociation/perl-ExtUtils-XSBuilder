@@ -1,6 +1,6 @@
 %define module	ExtUtils-XSBuilder
 %define version	0.28
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
 Name:		perl-%{module}
