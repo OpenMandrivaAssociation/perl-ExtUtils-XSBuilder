@@ -10,7 +10,6 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/ExtUtils/%{module}-%{version}.tar.bz2
 URL:		http://search.cpan.org/dist/%{module}/
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
 BuildRequires:	perl-Parse-RecDescent
 BuildRequires:	perl-Tie-IxHash
 # not automatically detected:
