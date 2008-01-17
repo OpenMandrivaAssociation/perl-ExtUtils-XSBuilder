@@ -1,22 +1,20 @@
 %define module	ExtUtils-XSBuilder
-%define version	0.28
-%define release	%mkrel 3
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
 Name:		perl-%{module}
-Version:	%{version}
-Release:	%{release}
+Version:	0.28
+Release:	%mkrel 4
 License:	GPL or Artistic
 Group:		Development/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/ExtUtils/%{module}-%{version}.tar.bz2
 URL:		http://search.cpan.org/dist/%{module}/
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
 BuildRequires:	perl-Parse-RecDescent
 BuildRequires:	perl-Tie-IxHash
 # not automatically detected:
 Requires:	perl-Parse-RecDescent perl-Tie-IxHash
 BuildArch:	noarch
 Epoch:		1
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 ExtUtils::XSBuilder is a set modules to parse C header files and create XS
@@ -53,5 +51,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README Changes
 %{perl_vendorlib}/ExtUtils/*
 %{_mandir}/*/*
-
-
