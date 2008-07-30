@@ -3,7 +3,7 @@
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
 Name:		perl-%{module}
 Version:	0.28
-Release:	%mkrel 4
+Release:	%mkrel 6
 License:	GPL or Artistic
 Group:		Development/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/ExtUtils/%{module}-%{version}.tar.bz2
