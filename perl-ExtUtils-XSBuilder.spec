@@ -1,20 +1,23 @@
-%define module	ExtUtils-XSBuilder
+%define upstream_name    ExtUtils-XSBuilder
+%define upstream_version 0.28
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+Epoch:		1
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
-Name:		perl-%{module}
-Version:	0.28
-Release:	%mkrel 6
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/ExtUtils/%{module}-%{version}.tar.bz2
-URL:		http://search.cpan.org/dist/%{module}/
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/ExtUtils/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl-Parse-RecDescent
 BuildRequires:	perl-Tie-IxHash
 # not automatically detected:
-Requires:	perl-Parse-RecDescent perl-Tie-IxHash
 BuildArch:	noarch
-Epoch:		1
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
+Requires:	perl-Parse-RecDescent perl-Tie-IxHash
 
 %description
 ExtUtils::XSBuilder is a set modules to parse C header files and create XS
@@ -26,8 +29,7 @@ stupid work and copy&paste from you. Also when the C API changes, most
 of the time you only have to rerun XSBuilder to get your new Perl API.
  
 %prep
-
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -41,7 +43,7 @@ mkdir -p $RPM_BUILD_ROOT/$installarchlib
 %makeinstall_std
 
 %__os_install_post
-find $RPM_BUILD_ROOT%{_prefix} -type f -print | sed "s@^$RPM_BUILD_ROOT@@g" | grep -v perllocal.pod > %{module}-%{version}-filelist
+find $RPM_BUILD_ROOT%{_prefix} -type f -print | sed "s@^$RPM_BUILD_ROOT@@g" | grep -v perllocal.pod > %{upstream_name}-%{upstream_version}-filelist
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
