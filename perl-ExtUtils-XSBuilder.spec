@@ -2,15 +2,15 @@
 %define upstream_version 0.28
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 Epoch:		1
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/ExtUtils/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/ExtUtils-XSBuilder
+Source0:	https://cpan.metacpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
