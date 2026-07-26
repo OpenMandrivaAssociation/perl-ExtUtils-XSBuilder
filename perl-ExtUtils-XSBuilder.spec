@@ -1,16 +1,14 @@
 %define upstream_name    ExtUtils-XSBuilder
-%define upstream_version 0.28
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.28
+Release:	6
 Epoch:		1
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/ExtUtils-XSBuilder
-Source0:	https://cpan.metacpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/G/GR/GRICHTER/ExtUtils-XSBuilder-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -33,7 +31,7 @@ stupid work and copy&paste from you. Also when the C API changes, most
 of the time you only have to rerun XSBuilder to get your new Perl API.
  
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -52,9 +50,7 @@ make test
 %changelog
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 1:0.280.0-1mdv2010.0
 + Revision: 403166
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1:0.28-6mdv2009.0
+- rebuild using %0.28 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1:0.28-6mdv2009.0
 + Revision: 256863
 - rebuild
 
