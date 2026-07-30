@@ -2,7 +2,7 @@
 %define upstream_version 0.28
 Name:		perl-%{upstream_name}
 Version:	0.28
-Release:	1
+Release:	2
 Epoch:		1
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
