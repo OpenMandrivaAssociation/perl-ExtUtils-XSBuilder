@@ -2,7 +2,7 @@
 %define upstream_version 0.28
 Name:		perl-%{upstream_name}
 Version:	0.28
-Release:	3
+Release:	4
 Epoch:		1
 
 Summary:	ExtUtils::XSBuilder - Automatic XS glue code generation
@@ -37,10 +37,12 @@ of the time you only have to rerun XSBuilder to get your new Perl API.
 %build
 perl Makefile.PL INSTALLDIRS=vendor
 make
-make test || :
 
 %install
 %makeinstall_std
+
+%check
+make test || :
 
 %files
 %doc README Changes
